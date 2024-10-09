@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* FONTS */
+@import url(https://fonts.bunny.net/css?family=amiko:400,700); /* text */
+@import url(https://fonts.bunny.net/css?family=cagliostro:400); /* title */
+
 
 body {
-    background-color: skyblue;
+    background-color: rgb(223, 152, 94);
+    font-family: 'amiko', sans-serif;
 }

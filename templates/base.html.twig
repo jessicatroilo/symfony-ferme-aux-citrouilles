@@ -30,7 +30,7 @@
                 <!-- LOGO FARM-->
                     <a href="{{ path('app_home')}}" class="flex flex-row items-center">
                         <img src="{{ asset('images/favicon.png') }}" alt="Logo Ferme aux citrouilles" class="h-14 lg:h-16">
-                        <h1 class="lg:text-3xl text-lg font-bold text-pumpkin">La Ferme aux citrouilles</h1>
+                        <h1 class="lg:text-3xl text-lg font-title text-pumpkin">La Ferme aux citrouilles</h1>
                     </a>
 
                 <!-- BURGER MENU --><!-!- A REVOIR -->
@@ -44,10 +44,10 @@
                 <!-- MENU NAVIGATION --> 
                     <div class="hidden w-full lg:block lg:w-auto" id="navbar-default" role="menu">  
                         <ul class="flex flex-row"> 
-                            <li class="m-2 text-xl"><a href="#" class="block text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a></li>
+                            <li class="m-2 text-xl"><a href="#" class="block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a></li>
+                            <li class="m-2 text-xl"><a href="#" class=" block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a></li>
+                            <li class="m-2 text-xl"><a href="#" class=" block font-text  text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a></li>
+                            <li class="m-2 text-xl"><a href="#" class=" block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -55,13 +55,13 @@
         </header>
 
         <!-- MAIN -->
-        <main>
+        <main class="grow">
         {% block body %}{% endblock %}
         </main>
 
         <!-- FOOTER -->
         <footer>
-            <p>&copy; 2024 - Ferme aux citrouilles</p>
+            <p class="font-bold">&copy; 2024 - Ferme aux citrouilles</p>
         </footer>
     </body>
 </html>
