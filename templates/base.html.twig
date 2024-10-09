@@ -22,15 +22,15 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
+    <body class="min-h-screen flex flex-col">
         <!-- HEADER, NAV -->
         <header role="banner">
             <nav role="navigation" class="bg-pearl">
                 <div class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center">
                 <!-- LOGO FARM-->
                     <a href="{{ path('app_home')}}" class="flex flex-row items-center">
-                        <img src="{{ asset('images/favicon.png') }}" alt="Logo Ferme aux citrouilles" class="h-16">
-                        <h1 class="text-3xl font-bold text-pumpkin">La Ferme aux citrouilles</h1>
+                        <img src="{{ asset('images/favicon.png') }}" alt="Logo Ferme aux citrouilles" class="h-14 lg:h-16">
+                        <h1 class="lg:text-3xl text-lg font-bold text-pumpkin">La Ferme aux citrouilles</h1>
                     </a>
 
                 <!-- BURGER MENU --><!!- A REVOIR>
