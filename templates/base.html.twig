@@ -32,13 +32,24 @@
                         <img src="{{ asset('images/favicon.png') }}" alt="Logo Ferme aux citrouilles" class="h-16">
                         <h1 class="text-3xl font-bold text-pumpkin">La Ferme aux citrouilles</h1>
                     </a>
-                <!-- MENU NAVIGATION -->   
-                    <ul class="flex flex-row"> 
-                        <li class="m-2 text-xl"><a href="#" class="text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a></li>
-                        <li class="m-2 text-xl"><a href="#" class="text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a></li>
-                        <li class="m-2 text-xl"><a href="#" class="text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a></li>
-                        <li class="m-2 text-xl"><a href="#" class="text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a></li>
-                    </ul>
+
+                <!-- BURGER MENU --><!!- A REVOIR>
+                
+                    <button class="lg:hidden flex items-center px-3 py-2 border rounded text-farm-blue border-farm-blue hover:text-pumpkin hover:border-pumpkin" id="navbar-default" aria-expended="false" aria-haspopup="true">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>            
+
+                <!-- MENU NAVIGATION --> 
+                    <div class="hidden w-full lg:block lg:w-auto" id="navbar-default" role="menu">  
+                        <ul class="flex flex-row"> 
+                            <li class="m-2 text-xl"><a href="#" class="block text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a></li>
+                            <li class="m-2 text-xl"><a href="#" class=" block text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a></li>
+                            <li class="m-2 text-xl"><a href="#" class=" block text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a></li>
+                            <li class="m-2 text-xl"><a href="#" class=" block text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </header>
