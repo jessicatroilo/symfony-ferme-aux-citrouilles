@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- META -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Entrez dans le monde des cucubitacés avec notre Ferme aux citrouilles ! Découvrez nos produits, nos ateliers thématiques et venez visiter notre ferme !"> 
+
+        <title>{% block title %}Bienvenue à la ferme aux citrouilles !{% endblock %}</title>
+
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon" alt="Logo Ferme aux citrouilles">
+
+        <!-- CSS, Tailwindcss -->
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        <!-- JS -->
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <!-- HEADER, NAV -->
+        <header role="banner">
+            <nav role="navigation" class="bg-pearl">
+                <div class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center">
+                <!-- LOGO FARM-->
+                    <a href="{{ path('app_home')}}" class="flex flex-row items-center">
+                        <img src="{{ asset('images/favicon.png') }}" alt="Logo Ferme aux citrouilles" class="h-16">
+                        <h1 class="text-3xl font-bold text-pumpkin">La Ferme aux citrouilles</h1>
+                    </a>
+                <!-- MENU NAVIGATION -->   
+                    <ul class="flex flex-row"> 
+                        <li class="m-2 text-xl"><a href="#" class="text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a></li>
+                        <li class="m-2 text-xl"><a href="#" class="text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a></li>
+                        <li class="m-2 text-xl"><a href="#" class="text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a></li>
+                        <li class="m-2 text-xl"><a href="#" class="text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+        {% block body %}{% endblock %}
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2024 - Ferme aux citrouilles</p>
+        </footer>
+    </body>
+</html>
