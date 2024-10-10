@@ -11,6 +11,10 @@ module.exports = {
       'leaf': "#739d7d",
       'farm-blue': "#3f646f",
     },
+    fontFamily: {
+      'title': ['"Cagliostro"', 'sans-serif'],
+      'text': ['"Amiko"', 'sans-serif'],
+    },
     extend: {},
   },
   plugins: [],
