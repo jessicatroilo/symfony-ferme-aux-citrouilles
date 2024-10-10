@@ -5,16 +5,20 @@
 {% block body %}
 <!-- ACCUEIL -->
 <!-- BLOC HERO -->
-<section>
-    <div class="lg:px-48 lg:mt-32 mt-8">
+<div class="relative w-full lg:h-screen">
+    <div class= "bg-pumpkin opacity-20 blur-sm h-full">
+        <img src="{{ asset('images/champs-citrouilles.jpg') }}" alt="Citrouilles" class="static">
+    </div>
+    <div class="absolute inset-0 lg:px-48 lg:mt-32 mt-8">
         <div class="lg:p-20 p-5 flex flex-col items-center justify-center">
-            <h2 class=" mb-4 font-title text-pearl text-center text-4xl lg:text-6xl ">L'automne est le printemps de l'hiver.</h2>
+            <h1 class=" mb-4 font-title text-pearl text-center text-2xl lg:text-6xl ">L'automne est le printemps de l'hiver.</h1>
             <p class="mt-6 lg:text-2xl text-md text-center leading-2 text-pearl">Bienvenue à <span class="font-title font-bold">La Ferme aux Citrouilles </span> ! Venez vivre une expérience unique au cœur de notre ferme, où l'automne prend vie à travers nos champs de citrouilles, activités familiales et moments de détente en pleine nature. Plongez dans l'univers chaleureux de notre ferme et repartez avec des souvenirs inoubliables… et bien sûr, la citrouille parfaite !</p>
             
+            
             <div class="mt-10 flex items-center justify-center gap-x-6">
-                <a href="#services-accueil" aria-label="Bouton pour arriver directement aux services proposés sur la page d'accueil" class="lg:text-xl text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-2 ring-pearl hover:bg-farm-blue">En savoir plus <span aria-hidden="true">&#9207;</span></a>
+                <a href="#" class="text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-2 ring-pearl hover:bg-farm-blue">En savoir plus <span aria-hidden="true">&#9207;</span></a>
             </div>
-        </div><div></div>
+        </div>
     </div>
 </section>
 
