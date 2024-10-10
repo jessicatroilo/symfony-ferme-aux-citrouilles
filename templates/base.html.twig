@@ -25,8 +25,8 @@
     <body class="min-h-screen flex flex-col">
         <!-- HEADER, NAV -->
         <header role="banner">
-            <nav role="navigation" class="bg-pearl">
-                <div class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center">
+            <nav class="bg-pearl">
+                <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center">
                 <!-- LOGO FARM-->
                     <a href="{{ path('app_home')}}" class="flex flex-row items-center">
                         <img src="{{ asset('images/favicon.png') }}" alt="Logo Ferme aux citrouilles" class="h-14 lg:h-16">
@@ -35,7 +35,7 @@
 
                 <!-- BURGER MENU --><!-!- A REVOIR -->
                 
-                    <button class="lg:hidden flex items-center px-3 py-2 border rounded text-farm-blue border-farm-blue hover:text-pumpkin hover:border-pumpkin" id="navbar-default" aria-expended="false" aria-haspopup="true">
+                    <button class="lg:hidden flex items-center px-3 py-2 border rounded text-farm-blue border-farm-blue hover:text-pumpkin hover:border-pumpkin" id="navbar-default" aria-expended="false" aria-haspopup="true" aria-label="accéder au menu de navigation">
                         <span class="sr-only">Ouvre le menu de navigation</span>
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -56,12 +56,13 @@
         </header>
 
         <!-- MAIN -->
-        <main class="grow">
+        <main role="main" class="grow">
         {% block body %}{% endblock %}
         </main>
 
         <!-- FOOTER -->
-        <footer>
+        <footer role="contentinfo" class="bg-pearl">
+        <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center shrink">
             <p class="font-bold">&copy; 2024 - Ferme aux citrouilles</p>
         </footer>
     </body>
