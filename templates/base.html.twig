@@ -56,45 +56,53 @@
         </header>
 
         <!-- MAIN -->
-        <main role="main" class="grow">
+        <main role="main" class="">
         {% block body %}{% endblock %}
         </main>
 
         <!-- FOOTER -->
         <footer role="contentinfo" class="bg-pearl">
-        <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center shrink">
-            <div>
-                <div>
-                    <h3> La ferme aux citrouilles </h3>
-                    <p> Les liens des réseaux sociaux</p>
-                </div>
-
-                <div>
-                    <h3> A propos </h3>
-                    <ul>
-                        <li> <a href="#"> Notre histoire </a></li>
-                        <li> <a href="#"> Nos engagements </a></li>
-                        <li> <a href="#"> Services </a></li>
-                        <li> <a href="#"> Contact </a></li>
-                        <li> <a href="#"> FAQ </a></li>
+        <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center justify-center flex-col">
+            <div class= "flex lg:flex-row flex-col m-2 p-2">
+            <!-- SOCIAL MEDIA -->
+                <div class="flex flex-col items-center mr-32">
+                    <h4 class="lg:text-lg text-sm text-pumpkin font-bold font-title uppercase"> La ferme aux citrouilles </h4>
+                    <ul class="flex flex-row"> 
+                        <li class="m-2 lg:text-base text-xs"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> Facebook </a></li>
+                        <li class="m-2 lg:text-base text-xs"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> X </a></li>
+                        <li class="m-2 lg:text-base text-xs"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> Linkedin </a></li>
+                        <li class="m-2 lg:text-base text-xs"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> Instagram </a></li>
+                        <li class="m-2 lg:text-base text-xs"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> Youtube </a></li>
                     </ul>
                 </div>
-
-                <div>
-                    <h3> Newsletter </h3>
-                    <p> texte de la Newsletter</p>
+            <!-- A PROPOS -->
+                <div class="flex flex-col">
+                    <h4 class="lg:text-lg text-md text-pumpkin font-bold font-title uppercase"> A propos </h4>
+                    <ul>
+                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Notre histoire </a></li>
+                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Nos engagements </a></li>
+                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Services </a></li>
+                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin">Contact </a></li>
+                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> FAQ </a></li>
+                    </ul>
+                </div>
+            <!-- NEWSLETTER -->
+                <div class="flex flex-col ml-32">
+                    <h4 class="lg:text-lg text-md text-pumpkin font-bold font-title uppercase"> Newsletter </h4>
+                    <p class="font-text text-farm-blue lg:text-base text-md font-bold"> texte de la Newsletter</p>
                     <p> Barre de saisie d'inscription OU écrire déjà inscrit </p>
-                    <p> texte d'incompagnement Newsletter</p>
+                    <p class="font-text text-farm-blue lg:text-md text-sm"> texte d'incompagnement Newsletter</p>
                 </div>
             </div>
 
-            <div>
-                <ul>
-                    <li> <a href="#"> Mentions légales </a></li>
-                    <li> <a href="#"> Politique de confidentialité </a></li>
-                    <li> <a href="#"> Politique Cookies </a></li>
+            <!-- MENTIONS LEGALES -->
+            <div class="flex flex-col items-center">
+                <ul class="flex flex-row">
+                    <li class="m-2 lg:text-md text-sm font-bold"><a href="#" class="font-text text-farm-blue"> Mentions légales </a></li>
+                    <li class="m-2 lg:text-md text-sm font-bold"><a href="#" class="font-text text-farm-blue"> Politique de confidentialité </a></li>
+                    <li class="m-2 lg:text-md text-sm font-bold"><a href="#" class="font-text text-farm-blue"> Politique Cookies </a></li>
                 </ul>
-                <p class="font-bold">&copy; 2024 - Ferme aux citrouilles</p>
+                <p class="font-bold font-text text-leaf">&copy; 2024 - Ferme aux citrouilles</p>
             </div>
         
         </footer>
