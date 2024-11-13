@@ -23,37 +23,54 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
+    
         {% endblock %}
     </head>
     <body class="min-h-screen flex flex-col">
         <!-- HEADER, NAV -->
         <header role="banner">
             <nav class="bg-pearl">
-                <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center">
-                <!-- LOGO FARM-->
-                    <a href="{{ path('app_home')}}" class="flex flex-row items-center">
-                        <img src="{{ asset('images/favicon.png') }}" alt="Logo Ferme aux citrouilles" class="h-14 lg:h-16">
-                        <h1 class="lg:text-3xl text-lg font-title text-pumpkin">La Ferme aux citrouilles</h1>
-                    </a>
-
-                <!-- BURGER MENU --><!-!- A REVOIR -->
-                
-                    <button class="lg:hidden flex items-center px-3 py-2 border rounded text-farm-blue border-farm-blue hover:text-pumpkin hover:border-pumpkin" id="navbar-default" aria-expended="false" aria-haspopup="true" aria-label="accéder au menu de navigation">
-                        <span class="sr-only">Ouvre le menu de navigation</span>
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>            
-
-                <!-- MENU NAVIGATION --> 
-                    <div class="hidden w-full lg:block lg:w-auto" id="navbar-default" role="menu">  
-                        <ul class="flex flex-row"> 
-                            <li class="m-2 text-xl"><a href="#" class="block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block font-text  text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a></li>
-                        </ul>
+                <div role="navigation" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex items-center">
+                            <!-- LOGO FARM-->
+                            <a href="{{ path('app_home')}}" class="flex flex-row items-center">
+                                <img src="{{ asset('images/favicon.png') }}" alt="Logo Ferme aux citrouilles" class="h-14 lg:h-16">
+                                <h1 class="lg:text-3xl text-lg font-title text-pumpkin">La Ferme aux citrouilles</h1>
+                            </a>
+                        </div>
+                        <div class="hidden md:flex space-x-4">
+                            <a href="#" class=" m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a>        
+                            <a href="#" class="m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a>
+                            <a href="#" class="m-2 text-xl block font-text  text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a>
+                            <a href="#" class="m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a>
+                        </div>
+                        <!-- Mobile menu button -->
+                        <div class="md:hidden flex items-center">
+                            <button id="burger-menu" class="Rounded text-farm-blue border-farm-blue hover:text-pumpkin hover:border-pumpkin focus:outline-none">
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
+                </div>
+                <!-- Mobile menu -->
+                <div id="menu" class="md:hidden hidden bg-gray-900 text-white px-4 py-6">
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" class="py-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a>        
+                        </li>
+                        <li>
+                            <a href="#" class="m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a>
+                        </li>
+                        <li>
+                            <a href="#" class="m-2 text-xl block font-text  text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a>
+                        </li>
+                        <li>
+                            <a href="#" class="m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </header>
