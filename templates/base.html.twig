@@ -23,6 +23,7 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
+    
         {% endblock %}
     </head>
     <body class="min-h-screen flex flex-col">
@@ -38,7 +39,7 @@
 
                 <!-- BURGER MENU --><!-!- A REVOIR -->
                 
-                    <button class="lg:hidden flex items-center px-3 py-2 border rounded text-farm-blue border-farm-blue hover:text-pumpkin hover:border-pumpkin" id="navbar-default" aria-expended="false" aria-haspopup="true" aria-label="accéder au menu de navigation">
+                    <button class="lg:hidden block px-3 py-2 border rounded text-farm-blue border-farm-blue hover:text-pumpkin hover:border-pumpkin" id="burger-menu" aria-label="accéder au menu de navigation">
                         <span class="sr-only">Ouvre le menu de navigation</span>
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -46,12 +47,12 @@
                     </button>            
 
                 <!-- MENU NAVIGATION --> 
-                    <div class="hidden w-full lg:block lg:w-auto" id="navbar-default" role="menu">  
+                    <div class="hidden w-full lg:flex lg:items-center lg:w-auto" id="menu" role="menu">  
                         <ul class="flex flex-row"> 
                             <li class="m-2 text-xl"><a href="#" class="block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"> Produits</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block font-text  text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a></li>
-                            <li class="m-2 text-xl"><a href="#" class=" block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a></li>
+                            <li class="m-2 text-xl"><a href="#" class="block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a></li>
+                            <li class="m-2 text-xl"><a href="#" class="block font-text  text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a></li>
+                            <li class="m-2 text-xl"><a href="#" class="block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a></li>
                         </ul>
                     </div>
                 </div>
