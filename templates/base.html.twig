@@ -59,7 +59,7 @@
         </header>
 
         <!-- MAIN -->
-        <main role="main" class="">
+        <main role="main" class="flex-grow">
         {% block body %}{% endblock %}
         </main>
 
@@ -68,33 +68,40 @@
         <div role="navigation" class="max-w-screen-xl w-full gap-8 p-2 mx-auto flex items-center justify-center flex-col">
             <div class= "flex lg:flex-row flex-col m-2 p-2">
             <!-- SOCIAL MEDIA -->
-                <div class="flex flex-col items-center mr-32">
-                    <h4 class="lg:text-lg text-sm text-pumpkin font-bold font-title uppercase"> La ferme aux citrouilles </h4>
+                <div class="flex flex-col items-center lg:mr-32 mb-4 w-full">
+                    <h4 class="lg:text-lg text-base text-pumpkin font-bold font-title uppercase"> La ferme aux citrouilles </h4>
                     <ul class="flex flex-row"> 
-                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> <i class="fa-brands fa-facebook"></i></a></li>
-                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> <i class="fa-brands fa-x-twitter"></i> </a></li>
-                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> <i class="fa-brands fa-linkedin-in"></i> </a></li>
-                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> <i class="fa-brands fa-instagram"></i></a></li>
-                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> <i class="fa-brands fa-youtube"></i> </a></li>
+                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"> <i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="m-2 lg:text-4xl text-2xl"><a href="#" class="font-text text-farm-blue hover:text-pumpkin"><i class="fa-brands fa-youtube"></i></a></li>
                     </ul>
                 </div>
             <!-- A PROPOS -->
-                <div class="flex flex-col">
-                    <h4 class="lg:text-lg text-md text-pumpkin font-bold font-title uppercase"> A propos </h4>
-                    <ul>
-                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Notre histoire </a></li>
-                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Nos engagements </a></li>
-                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Services </a></li>
-                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin">Contact </a></li>
-                        <li class="lg:text-base text-xs"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> FAQ </a></li>
+                <div class="flex flex-col lg:items-start items-center w-full mb-4">
+                    <h4 class="lg:text-lg text-base text-pumpkin font-bold font-title uppercase mb-2"> A propos </h4>
+                    <ul class="lg:text-start text-center">
+                        <li class="lg:text-base text-sm"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Notre histoire </a></li>
+                        <li class="lg:text-base text-sm"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Nos engagements </a></li>
+                        <li class="lg:text-base text-sm"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> Services </a></li>
+                        <li class="lg:text-base text-sm"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin">Contact </a></li>
+                        <li class="lg:text-base text-sm"><a href="#" class="font-text font-bold text-farm-blue hover:text-pumpkin"> FAQ </a></li>
                     </ul>
                 </div>
             <!-- NEWSLETTER -->
-                <div class="flex flex-col ml-32">
-                    <h4 class="lg:text-lg text-md text-pumpkin font-bold font-title uppercase"> Newsletter </h4>
-                    <p class="font-text text-farm-blue lg:text-base text-md font-bold"> texte de la Newsletter</p>
-                    <p> Barre de saisie d'inscription OU écrire déjà inscrit </p>
-                    <p class="font-text text-farm-blue lg:text-md text-sm"> texte d'incompagnement Newsletter</p>
+                <div class="flex flex-col lg:items-start items-center lg:ml-32">
+                    <h4 class="lg:text-lg text-md text-pumpkin font-bold font-title uppercase mb-2"> Newsletter </h4>
+                    <p class="font-text text-farm-blue lg:text-base text-md mb-2"> 
+                    Rejoignez notre newsletter et restez informé de toutes nos activités à la ferme, des récoltes de citrouilles aux événements spéciaux ! Ne manquez plus aucune nouveauté et partagez la magie de la saison avec nous
+                    </p>
+                    <form> 
+                        <input type="email" placeholder="Votre adresse email" class="border border-farm-blue p-2 rounded-lg">
+                        <button type="submit" class="bg-pumpkin text-pearl p-2 rounded-lg"> S'inscrire </button>
+                    </form>
+                    <p class="font-text text-farm-blue lg:text-md text-sm mt-2"> 
+                    Vous pouvez vous désabonner à tout moment en cliquant sur le lien prévu à cet effet dans nos emails. Nous respectons votre vie privée et nous assurons que vos informations resteront confidentielles.
+                    </p>
                 </div>
             </div>
 
