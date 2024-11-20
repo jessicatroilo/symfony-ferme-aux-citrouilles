@@ -8,6 +8,8 @@ module.exports = {
     colors: {
       'pearl': "#fbfcf8",
       'pumpkin': "#fdaa57",
+      'pumpkin-dark': "#DF985E",
+      'pumpkin-btn' : "#d16900",
       'leaf': "#739d7d",
       'farm-blue': "#3f646f",
     },
@@ -15,7 +17,11 @@ module.exports = {
       'title': ['"Cagliostro"', 'sans-serif'],
       'text': ['"Amiko"', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/public/images/champs-citrouilles.avif')",
+      }
+    },
   },
   plugins: [],
 }

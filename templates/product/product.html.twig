@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+<!--TODO : Faire la section de présentation -->
+<!--TODO : Faire la section de liste des produits -->
+<!-- TODO : Réaliser les fiches produits -->
+<!-- TODO : dynamiser la page avec des données de la base de données -->
+<!--TODO : mettre en place une pagination avec Symfony : 5 produits par pages (possibilité d'en mettre plus en séléctionnant-->
+<!-- TODO : mettre en place un système de filtre par catégorie de produit -->
+<!-- TODO : mettre en place un système de recherche par mot clé -->
+<!-- TODO : mettre en place un système de tri par prix -->
+<!-- TODO : mettre en place un système de tri par nom -->
+<!-- TODO : mettre en place le panier -->
+
+<!-- TITLE DESCRIPTION PAGE PRODUCT -->
+<section>
+    <div class="relative">
+        <div class="bg-hero-pattern blur bg-pumpkin opacity-40 w-auto lg:h-52 h-60 static">
+        </div>
+        <div class="lg:px-32 pb-12 lg:mt-2 absolute top-0">
+            <h2 class="lg:text-5xl text-2xl text-center font-title text-pearl text-bold my-2 pt-8">Nos Produits Fermiers</h2>
+            <p class="mt-6 lg:text-xl text-md text-center leading-2 text-pearl"> Découvrez les produits fermiers de notre ferme aux citrouilles : citrouilles comestibles, décoratives et autres produits artisanaux locaux. Qualité, fraîcheur et saveurs authentiques directement du producteur à votre table.</p>
+        </div>
+</section>
+
+<!-- PRODUCT LIST -->
+<section class="border-b-2 border-pumpkin-dark">
+        <div class="bg-pearl flex flex-col gap-4">
+            <!-- Product 1 -->
+            <div class="lg:px-52 px-16 py-8 flex lg:flex-row flex-col items-center">
+                <img src="{{asset('/images/champs-citrouilles.avif')}}" class="w-80 h-80"> </img>
+                <div class="flex flex-col lg:items-start items-center mt-4 lg:ms-6 gap-3 text-farm-blue">
+                    <h3 class="lg:text-3xl text-2xl font-bold font-title text-farm-blue uppercase">Courges 1</h3>
+                    <p class="lg:text-lg text-md"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ipsum sagittis, molestie ante id, sollicitudin ante. Suspendisse ac nisl eu nisl posuere consequat non eget est. Nunc luctus gravida interdum. Curabitur luctus gravida elit, tincidunt efficitur tortor finibus vitae. Vivamus eget est tortor. Proin a facilisis augue. Maecenas vel enim tortor. Nunc accumsan laoreet nulla, nec commodo mauris viverra quis...                   
+                        <a href="#" class="lg:text-xl text-lg underline underline-offset-4 font-bold text-leaf active:text-pumpkin hover:text-pumpkin">  En savoir plus</a> <!-- View product button -->
+                    </p> 
+                    <p class="mt-5 font-bold text-2xl"> 15.00 €/la pièce</p>
+                    <button class="flex self-stretch lg:self-start justify-center mt-1 lg:text-xl text-m font-bold bg-pumpkin-btn text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue"> Ajouter au panier</button> <!-- Add to cart button -->
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="lg:px-52 px-16 py-8 flex lg:flex-row flex-col items-center">
+                <img src="{{asset('/images/champs-citrouilles.avif')}}" class="w-80 h-80"> </img>
+                <div class="flex flex-col lg:items-start items-center mt-4 lg:ms-6 gap-3 text-farm-blue">
+                    <h3 class="lg:text-3xl text-2xl font-bold font-title text-farm-blue uppercase">Courges 2</h3>
+                    <p class="lg:text-lg text-md"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ipsum sagittis, molestie ante id, sollicitudin ante. Suspendisse ac nisl eu nisl posuere consequat non eget est. Nunc luctus gravida interdum. Curabitur luctus gravida elit, tincidunt efficitur tortor finibus vitae. Vivamus eget est tortor. Proin a facilisis augue. Maecenas vel enim tortor. Nunc accumsan laoreet nulla, nec commodo mauris viverra quis...                   
+                        <a href="#" class="lg:text-xl text-lg underline underline-offset-4 font-bold text-leaf active:text-pumpkin hover:text-pumpkin">  En savoir plus</a> <!-- View product button -->
+                    </p> 
+                    <p class="mt-5 font-bold text-2xl"> 10.00 €/la pièce</p>
+                    <button class="flex self-stretch lg:self-start justify-center mt-1 lg:text-xl text-m font-bold bg-pumpkin-btn text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue"> Ajouter au panier</button> <!-- Add to cart button -->
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="lg:px-52 px-16 py-8 flex lg:flex-row flex-col items-center">
+                <img src="{{asset('/images/champs-citrouilles.avif')}}" class="w-80 h-80"> </img>
+                <div class="flex flex-col lg:items-start items-center mt-4 lg:ms-6 gap-3 text-farm-blue ">
+                    <h3 class="lg:text-3xl text-2xl font-bold font-title text-farm-blue uppercase">Courges 3</h3>
+                    <p class="lg:text-lg text-md"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ipsum sagittis, molestie ante id, sollicitudin ante. Suspendisse ac nisl eu nisl posuere consequat non eget est. Nunc luctus gravida interdum. Curabitur luctus gravida elit, tincidunt efficitur tortor finibus vitae. Vivamus eget est tortor. Proin a facilisis augue. Maecenas vel enim tortor. Nunc accumsan laoreet nulla, nec commodo mauris viverra quis...                   
+                        <a href="#" class="lg:text-xl text-lg underline underline-offset-4 font-bold text-leaf active:text-pumpkin hover:text-pumpkin">  En savoir plus</a> <!-- View product button -->
+                    </p> 
+                    <p class="mt-5 font-bold text-2xl"> 05.00 €/la pièce</p>
+                    <button class="flex self-stretch lg:self-start justify-center mt-1 lg:text-xl text-m font-bold bg-pumpkin-btn text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue"> Ajouter au panier</button> <!-- Add to cart button -->
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="lg:px-52 px-16 py-8 flex lg:flex-row flex-col items-center">
+                <img src="{{asset('/images/champs-citrouilles.avif')}}" class="w-80 h-80"> </img>
+                <div class="flex flex-col lg:items-start items-center mt-4 lg:ms-6 gap-3 text-farm-blue">
+                    <h3 class="lg:text-3xl text-2xl font-bold font-title text-farm-blue uppercase">Courges 4</h3>
+                    <p class="lg:text-lg text-md"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et ipsum sagittis, molestie ante id, sollicitudin ante. Suspendisse ac nisl eu nisl posuere consequat non eget est. Nunc luctus gravida interdum. Curabitur luctus gravida elit, tincidunt efficitur tortor finibus vitae. Vivamus eget est tortor. Proin a facilisis augue. Maecenas vel enim tortor. Nunc accumsan laoreet nulla, nec commodo mauris viverra quis...                   
+                        <a href="#" class="lg:text-xl text-lg underline underline-offset-4 font-bold text-leaf active:text-pumpkin hover:text-pumpkin">  En savoir plus</a> <!-- View product button -->
+                    </p> 
+                    <p class="mt-5 font-bold text-2xl"> 08.00 €/la pièce</p>
+                    <button class="flex self-stretch lg:self-start justify-center mt-1 lg:text-xl text-m font-bold bg-pumpkin-btn text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue"> Ajouter au panier</button> <!-- Add to cart button -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
