@@ -20,7 +20,7 @@ class Product
     #[ORM\Column(length: 50)]
     private ?string $type = null;
 
-    #[ORM\Column(length: 150)]
+    #[ORM\Column(length: 255)]
     private ?string $resume = null;
 
     #[ORM\Column(type: Types::TEXT)]
