@@ -23,14 +23,16 @@
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
-    
         {% endblock %}
+
+        
+
     </head>
     <body class="min-h-screen flex flex-col">
         <!-- HEADER, NAV -->
         <header role="banner">
             <nav class="bg-pearl">
-                <div role="navigation" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div role="navigation" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:py-2 lg:py-4">
                     <div class="flex items-center justify-between h-16">
                         <div class="flex items-center">
                             <!-- LOGO FARM-->
