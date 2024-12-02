@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+<!--TODO : Faire la section de présentation : OK -->
+<!--TODO : Faire la section de liste des produits : OK --> 
+<!-- TODO : Réaliser les fiches produits : OK -->
+<!-- TODO : dynamiser la page avec des données de la base de données : OK -->
+<!--TODO : mettre en place une pagination avec Symfony : 5 produits par pages (possibilité d'en mettre plus en séléctionnant-->
+<!-- TODO : mettre en place un système de filtre par catégorie de produit -->
+<!-- TODO : mettre en place un système de recherche par mot clé -->
+<!-- TODO : mettre en place un système de tri par prix -->
+<!-- TODO : mettre en place un système de tri par nom -->
+<!-- TODO : mettre en place le panier -->
+
+<!-- TITLE DESCRIPTION PAGE PRODUCT -->
+<div class="relative">
+    <section>
+        <div class="bg-hero-pattern blur bg-pumpkin opacity-40 w-auto lg:h-52 h-60 static">
+        </div>
+        <div class="lg:px-32 pb-12 lg:mt-2 absolute top-0">
+            <h2 class="lg:text-5xl text-2xl text-center font-title text-pearl text-bold my-2 pt-8">Nos Produits Fermiers</h2>
+            <p class="mt-6 lg:text-xl text-md text-center leading-2 text-pearl"> Découvrez les produits fermiers de notre ferme aux citrouilles : citrouilles comestibles, décoratives et autres produits artisanaux locaux. Qualité, fraîcheur et saveurs authentiques directement du producteur à votre table.</p>
+        </div>
+    </section>
+
+<!-- PRODUCT LIST -->
+    <section class="border-b-2 border-pumpkin-dark">
+            <div class="bg-pearl flex flex-col gap-4">
+                <!-- PAGINATION --> 
+                <div class="flex lg:flex-row flex-col-reverse lg:justify-evenly justify-center items-center">   
+                    <div class="text-farm-blue font-bold px-3 py-2 lg:text-2xl text-md">
+                        {{ productList.getItemNumberPerPage}} / {{ productList.getTotalItemCount }} résultat(s) <!-- nombre de produits par page / nombre total de produits -->
+                    </div>
+                    <div class="flex justify-center lg:gap-4 lg:my-4 my-2"> 
+                        {{ knp_pagination_render(productList) }}
+                    </div>
+                </div>
+                <!-- LIST OF PRODUCT -->
+                {% for product in productList %}
+                <div class="lg:px-52 px-16 py-8 flex lg:flex-row flex-col items-center">
+                    <img src="{{ product.picture }}" class="w-80 h-80"> </img>
+                    <div class="flex flex-col lg:items-start items-center mt-4 lg:ms-6 gap-3 text-farm-blue">
+                        <h3 class="lg:text-3xl text-2xl font-bold font-title text-farm-blue uppercase">{{ product.name }}</h3>
+                        <p class="lg:text-lg text-md"> 
+                        {{ product.resume }}...                   
+                            <a href="#" class="lg:text-xl text-lg underline underline-offset-4 font-bold text-leaf active:text-pumpkin hover:text-pumpkin">  En savoir plus</a> <!-- View product button -->
+                        </p> 
+                        <p class="mt-5 font-bold text-2xl"> {{ product.price |format_currency('EUR', locale='fr')}}/la pièce</p>
+                        <button class="flex self-stretch lg:self-start justify-center mt-1 lg:text-xl text-m font-bold bg-pumpkin-btn text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue"> Ajouter au panier</button> <!-- Add to cart button -->
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- PAGINATION --> 
+                <div class="flex lg:flex-row flex-col justify-evenly items-center">            
+                    <div class="text-farm-blue font-bold px-3 py-2 lg:text-2xl text-md">
+                        Page {{ productList.getCurrentPageNumber }} / {{ productList.getPageCount }} <!-- page courante / nombre total de pages -->
+                    </div>
+                    <div class="flex justify-center gap-4 my-4">
+                        {{ knp_pagination_render(productList) }} <!-- pagination -->
+                    </div>
+                <div>
+            </div>
+
+            
+    </section>
+</div>
+{% endblock %}
