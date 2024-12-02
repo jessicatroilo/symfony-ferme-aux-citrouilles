@@ -31,11 +31,11 @@
     <section class="border-b-2 border-pumpkin-dark">
             <div class="bg-pearl flex flex-col gap-4">
                 <!-- PAGINATION --> 
-                <div class="flex flex-row justify-evenly gap-4">   
-                    <div class=""> 
-                        Page {{ productList.getCurrentPageNumber }} / {{ productList.getPageCount }}
+                <div class="flex lg:flex-row flex-col-reverse lg:justify-evenly justify-center items-center">   
+                    <div class="text-farm-blue font-bold px-3 py-2 lg:text-2xl text-md">
+                        {{ productList.getItemNumberPerPage}} / {{ productList.getTotalItemCount }} résultat(s) <!-- nombre de produits par page / nombre total de produits -->
                     </div>
-                    <div class=""> 
+                    <div class="flex justify-center lg:gap-4 lg:my-4 my-2"> 
                         {{ knp_pagination_render(productList) }}
                     </div>
                 </div>
@@ -56,11 +56,14 @@
                 {% endfor %}
 
                 <!-- PAGINATION --> 
-                Page {{ productList.getCurrentPageNumber }} / {{ productList.getPageCount }} <!-- page courante / nombre total de pages -->
-                {{ productList.getItemNumberPerPage }} / {{ productList.getTotalItemCount }} résultat(s) <!-- nombre de produits par page / nombre total de produits -->
-                <div class="flex justify-center gap-4 my-4">
-                    {{ knp_pagination_render(productList) }} <!-- pagination -->
-                </div>
+                <div class="flex lg:flex-row flex-col justify-evenly items-center">            
+                    <div class="text-farm-blue font-bold px-3 py-2 lg:text-2xl text-md">
+                        Page {{ productList.getCurrentPageNumber }} / {{ productList.getPageCount }} <!-- page courante / nombre total de pages -->
+                    </div>
+                    <div class="flex justify-center gap-4 my-4">
+                        {{ knp_pagination_render(productList) }} <!-- pagination -->
+                    </div>
+                <div>
             </div>
 
             
