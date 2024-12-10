@@ -2,7 +2,7 @@
 
 
 
-{% block title %}Nos produits fermiers{% endblock %}
+{% block title %}Hello ProductController!{% endblock %}
 
 {% block body %}
 <!--TODO : Faire la section de présentation : OK -->
@@ -18,7 +18,7 @@
 
 <!-- TITLE DESCRIPTION PAGE PRODUCT -->
 <div class="relative">
-    <section class="bg-pumpkin-dark">
+    <section>
         <div class="bg-hero-pattern blur bg-pumpkin opacity-40 w-auto lg:h-52 h-60 static">
         </div>
         <div class="lg:px-32 pb-12 lg:mt-2 absolute top-0">
@@ -47,10 +47,10 @@
                         <h3 class="lg:text-3xl text-2xl font-bold font-title text-farm-blue uppercase">{{ product.name }}</h3>
                         <p class="lg:text-lg text-md"> 
                         {{ product.resume }}...                   
-                            <a href="{{ path ('app_front_product_show', {id:product.id}) }}" class="lg:text-xl text-lg underline underline-offset-4 font-bold text-leaf active:text-pumpkin hover:text-pumpkin">  En savoir plus</a> <!-- View product button -->
+                            <a href="#" class="lg:text-xl text-lg underline underline-offset-4 font-bold text-leaf active:text-pumpkin hover:text-pumpkin">  En savoir plus</a> <!-- View product button -->
                         </p> 
                         <p class="mt-5 font-bold text-2xl"> {{ product.price |format_currency('EUR', locale='fr')}}/la pièce</p>
-                        <button class="flex self-stretch lg:self-start justify-center mt-1 lg:text-xl text-m font-bold bg-pumpkin-btn text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue"> <i class="fa-solid fa-cart-shopping self-center me-4"></i>Ajouter au panier</button> <!-- Add to cart button -->
+                        <button class="flex self-stretch lg:self-start justify-center mt-1 lg:text-xl text-m font-bold bg-pumpkin-btn text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue"> Ajouter au panier</button> <!-- Add to cart button -->
                     </div>
                 </div>
                 {% endfor %}
