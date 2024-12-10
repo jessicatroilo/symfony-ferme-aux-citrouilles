@@ -5,13 +5,15 @@
 {% block body %}
 <!-- ACCUEIL -->
 <!-- BLOC HERO -->
-<section>
-    <div class="lg:px-48 lg:mt-32 mt-8">
+<section class="relative">
+    <div class="bg-hero-pattern blur bg-pumpkin opacity-40 h-screen w-auto static">
+     </div>
+    <div class="flex justify-end lg:px-48 top-0 h-screen absolute">
         <div class="lg:p-20 p-5 flex flex-col items-center justify-center">
             <h2 class=" mb-4 font-title text-pearl text-center text-4xl lg:text-6xl ">L'automne est le printemps de l'hiver.</h2>
             <p class="mt-6 lg:text-2xl text-md text-center leading-2 text-pearl">Bienvenue à <span class="font-title font-bold">La Ferme aux Citrouilles </span> ! Venez vivre une expérience unique au cœur de notre ferme, où l'automne prend vie à travers nos champs de citrouilles, activités familiales et moments de détente en pleine nature. Plongez dans l'univers chaleureux de notre ferme et repartez avec des souvenirs inoubliables… et bien sûr, la citrouille parfaite !</p>
             
-            <div class="mt-10 flex items-center justify-center gap-x-6">
+            <div class="mt-10 mb-8 flex items-center justify-center gap-x-6">
                 <a href="#services-accueil" aria-label="Bouton pour arriver directement aux services proposés sur la page d'accueil" class="lg:text-xl text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-2 ring-pearl hover:bg-farm-blue">En savoir plus <span aria-hidden="true">&#9207;</span></a>
             </div>
         </div>
@@ -20,19 +22,20 @@
 
 <!-- BLOC SERVICES -->
 <section id="services-accueil">
-    <div class="pb-32 bg-pearl">
-        <h2 class="lg:text-6xl text-4xl text-center font-title text-pumpkin text-bold my-2 pt-8"> Nos services </h2>
-        <div class="flex lg:flex-row flex-col items-center justify-center my-16 lg:gap-16 gap-32">
+
+    <div class="pb-44 bg-pearl">
+        <h2 class="lg:text-6xl text-4xl text-center font-title text-pumpkin text-bold my-3 py-8"> Nos services </h2>
+        <div class="flex lg:flex-row flex-col items-center justify-center my-16 gap-16">
             <div class="flex flex-col items-center gap-3 box-content h-96 w-96">
-                <img src="{{ asset('images/produits-fermiers.avif') }}" alt="Produits fermiers" class="object-fill h-96 w-96 rounded">
+                <img src="{{ asset('images/produits-fermiers.avif') }}" alt="Produits fermiers" class="object-fill lg:h-96 lg:w-96 rounded">
                 <a href="{{path ('app_front_product_list')}}" aria-label="Bouton pour accèder à la page des produits de la ferme" class="font-text lg:text-xl text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue text-center"> Découvrir tous nos produits </a>
             </div>
             <div class="flex flex-col items-center gap-3 box-content h-96 w-96">
-                <img src="{{ asset('images/visites-guidees.avif') }}" alt="Visites guidées" class="object-fill h-96 w-96 rounded">
+                <img src="{{ asset('images/visites-guidees.avif') }}" alt="Visites guidées" class="object-fill lg:h-96 lg:w-96 rounded">
                 <a href="#" aria-label="Bouton pour accèder à la page de réservation d'une visite guidée" class="font-text lg:text-xl text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue text-center"> Réserver votre place </a>
             </div>
             <div class="flex flex-col items-center gap-3 box-content h-96 w-96">
-                <img src="{{ asset('images/ateliers-citrouilles.avif') }}" alt="Ateliers autour de la citrouille" class="object-fill h-96 w-96 rounded">
+                <img src="{{ asset('images/ateliers-citrouilles.avif') }}" alt="Ateliers autour de la citrouille" class="object-fill lg:h-96 lg:w-96 rounded">
                 <a href="#" aria-label="Bouton pour accèder aux informations et réservations des ateliers de la ferme" class="font-text lg:text-xl text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-4 ring-pumpkin hover:bg-farm-blue text-center"> Découvrir tous nos ateliers</a>
             </div>
         </div>
@@ -44,19 +47,19 @@
     <div class="lg:px-48 pb-16 lg:mt-8">
         <h2 class="lg:text-6xl text-4xl text-center font-title text-pearl text-bold my-2 pt-8"> Nos actualités </h2>
         <div class="flex lg:flex-row flex-col items-center justify-center my-16 lg:gap-16 gap-32">
-            <div class="flex flex-col items-center gap-3 box-content h-96 w-96">
-                <img src="{{ asset('images/champs-citrouilles.avif') }}" alt="Actualité 1" class="object-fill h-96 w-96 rounded">
-                <p class="text-pearl font-text"> Une journée à la ferme aux citrouilles : Vivez une aventure automnale inoubliable entre cueillette de citrouilles, ateliers de sculpture et activités familiales. </p>
+            <div class="flex flex-col items-center gap-3 justify-center box-content lg:h-96 lg:w-96">
+                <img src="{{ asset('images/champs-citrouilles.avif') }}" alt="Actualité 1" class="object-fill lg:h-96 lg:w-96 h-80 w-80 rounded">
+                <p class="text-pearl font-text text-center"> Une journée à la ferme aux citrouilles : Vivez une aventure automnale inoubliable entre cueillette de citrouilles, ateliers de sculpture et activités familiales. </p>
                 <a href="#" aria-label="Bouton pour accèder à l'actualité 1" class="font-text lg:text-xl text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-2 ring-pearl hover:bg-farm-blue text-center"> Lire l'article </a>
             </div>
-            <div class="flex flex-col items-center gap-3 box-content h-96 w-96">
-                <img src="{{ asset('images/champs-citrouilles.avif') }}" alt="Actualité 2" class="object-fill h-96 w-96 rounded">
-                <p class="text-pearl font-text"> Les secrets des citrouilles : Découvrez comment les agriculteurs cultivent les citrouilles et l'impact positif des fermes sur l'environnement. </p>
+            <div class="flex flex-col items-center gap-3 justify-center box-content lg:h-96 lg:w-96">
+                <img src="{{ asset('images/champs-citrouilles.avif') }}" alt="Actualité 2" class="object-fill lg:h-96 lg:w-96 h-80 w-80 rounded">
+                <p class="text-pearl font-text text-center"> Les secrets des citrouilles : Découvrez comment les agriculteurs cultivent les citrouilles et l'impact positif des fermes sur l'environnement. </p>
                 <a href="#" aria-label="Bouton pour accèder à l'actualité 2" class="font-text lg:text-xl text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-2 ring-pearl hover:bg-farm-blue text-center"> Lire l'article </a>
             </div>
-            <div class="flex flex-col items-center gap-3 box-content h-96 w-96">
-                <img src="{{ asset('images/champs-citrouilles.avif') }}" alt="Actualité 3" class="object-fill h-96 w-96 rounded">
-                <p class="text-pearl font-text"> Activités et recettes à base de citrouilles : Inspirez-vous de créations et recettes automnales, de la décoration au dessert, grâce aux trésors de la ferme. </p>
+            <div class="flex flex-col items-center gap-3 justify-center box-content lg:h-96 lg:w-96">
+                <img src="{{ asset('images/champs-citrouilles.avif') }}" alt="Actualité 3" class="object-fill lg:h-96 lg:w-96 h-80 w-80 rounded">
+                <p class="text-pearl font-text text-center"> Activités et recettes à base de citrouilles : Inspirez-vous de créations et recettes automnales, de la décoration au dessert, grâce aux trésors de la ferme. </p>
                 <a href="#" aria-label="Bouton pour accèder à l'actualité 3" class="font-text lg:text-xl text-m font-bold leading-6 bg-leaf text-pearl p-3 rounded-lg hover:ring-2 ring-pearl hover:bg-farm-blue text-center"> Lire l'article </a>
             </div>
         </div>
