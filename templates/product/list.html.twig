@@ -32,12 +32,14 @@
             <div class="bg-pearl flex flex-col gap-4">
                 <!-- PAGINATION --> 
                 <div class="flex lg:flex-row flex-col-reverse lg:justify-evenly justify-center items-center">   
-                    <div class="text-farm-blue font-bold px-3 py-2 lg:text-2xl text-md">
+                    
                         {{ form_start(formProductsPerPage, {'action': app.request.uri}) }}
-                        {{ form_row(formProductsPerPage.productToShow) }}
-                        {{ form_row(formProductsPerPage.submit) }}
+                        <div class="text-farm-blue font-bold px-3 py-2 lg:text-2xl text-md flex flex-row items-center gap-2">
+                            {{ form_row(formProductsPerPage.productToShow) }}
+                            {{ form_row(formProductsPerPage.submit) }}
+                        </div>
                         {{ form_end(formProductsPerPage) }} <!-- nombre de produits par page -->
-                    </div>
+                    
                     <div class="flex justify-center lg:gap-4 lg:my-4 my-2"> 
                         {{ knp_pagination_render(productList) }}
                     </div>
