@@ -18,6 +18,7 @@ class ProductRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry, private PaginatorInterface $paginator)
     {
         parent::__construct($registry, Product::class);
+        $this->paginator = $paginator;
     }
 
 
@@ -25,14 +26,18 @@ class ProductRepository extends ServiceEntityRepository
      * Method to paginate products with KnpPaginator (bundle : https://github.com/KnpLabs/KnpPaginatorBundle)
      *
      * @param integer $currentPage
+     * @param integer $productsPerPage
      * @return PaginationInterface
      */
-    public function paginateProduct(int $currentPage) : PaginationInterface
+    public function paginateProduct(int $currentPage, int $productsPerPage) : PaginationInterface
     {
+        $queryBuilder = $this->createQueryBuilder('p');
+
         return $this->paginator->paginate(
-            $this->createQueryBuilder('p'),
-            $currentPage,
-            4,
+            $queryBuilder, // Requête contenant les données à paginer
+            $currentPage, // Numéro de la page en cours, 1 par défaut
+            $productsPerPage // Nombre de résultats par page
+
         );
     }
 
