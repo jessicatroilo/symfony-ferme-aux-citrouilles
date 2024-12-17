@@ -17,7 +17,7 @@
         <a href="{{ path('app_front_product_list') }}" class="my-4 lg:text-lg text-m font-bold bg-leaf text-pearl p-2 rounded-lg hover:ring-2 ring-pumpkin hover:bg-farm-blue"> Retour </a>
         <h2 class="lg:text-5xl text-3xl text-center font-title text-leaf text-bold my-3">{{ product.name }}</h2>
         <div class="flex flex-col items-center lg:flex-row">
-            <img  src="{{ product.picture }}" class=" w-40 h-40 lg:w-80 lg:h-80 mx-6 lg:float-left" alt="Image représentant des Potimarrons, ronds et orangés"> </img>
+            <img  src="{{ product.picture }}" class=" w-40 h-40 lg:w-80 lg:h-80 mx-6 lg:float-left" alt="Image représentant des {{ product.name }}"> </img>
             <div class="flex flex-col justify-between">
                 <p class="mt-10 lg:text-xl text-md leading-2 text-farm-blue"> {{ product.description }}</p> 
                 <div class="flex flex-row gap-1 flex-wrap lg:justify-between">
