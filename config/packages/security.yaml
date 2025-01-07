@@ -29,6 +29,9 @@ security:
     access_control:
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/admin, roles: ROLE_ADMIN }
+        # Règle pour les actions réservées aux utilisateurs connectés (réservation, achat, etc.)
+        - { path: ^/(atelier/reservation|visite/reservation|produits/acheter), roles: ROLE_USER }
+
 
 when@test:
     security:

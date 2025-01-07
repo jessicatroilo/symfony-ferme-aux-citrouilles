@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Créer mon compte {% endblock %}
+
+
+{% block body %}
+<!-- TODO : mettre en forme la page -->
+<!-- TODO : ajouter un formulaire pour enregistrer un utilisateur - OK -->
+<!-- TODO : ajouter un formulaire pour se connecter -->
+<!-- TODO : ajouter un formulaire pour se déconnecter -->
+<!--TODO : Choisir les champs du formulaire : nom, prénom, pseudo, email, mot de passe -->
+<!--TODO : Ajouter un bouton pour valider le formulaire -->
+<!--TODO: mettre un lien pour réecrire le mot de passe deux fois -->
+
+<!--Create a registration/ Création d'un compte -->
+<div class="example-wrapper">
+    <h2 id="create-register-title" class="lg:text-5xl text-2xl text-center font-title text-pearl text-bold my-2 pt-8">Créer mon compte </h2>
+    <p class="mt-6 lg:text-xl text-md text-center leading-2 text-pearl"> Les champs marqué d"un * sont obligatoires</p>
+<div>
+
+<section aria-labellebdy="create-register-title">
+    {{ form_errors(formRegisterUser) }}  
+
+    {{ form_start (formRegisterUser, {'attr': {'aria-describedby': 'form-errors'}}) }}
+        {{ form_row(formRegisterUser.firstname) }}
+        {{ form_row(formRegisterUser.lastname) }}
+        {{ form_row(formRegisterUser.pseudo) }}
+        {{ form_row(formRegisterUser.email) }}
+        {{ form_row(formRegisterUser.password) }}
+        {{ form_row(formRegisterUser.submit) }}
+    {{ form_end(formRegisterUser) }}
+
+</section>
+{% endblock %}
