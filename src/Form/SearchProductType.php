@@ -29,7 +29,7 @@ class SearchProductType extends AbstractType
             '10' => 10,
             '50' => 50
         ],
-        'label' => 'Produit(s) par page : ',
+        'label' => false, // Supprime le label - Le label par défaut n'apparaitra pas
         'attr' => [
             'class' => 'p-1'
         ],
