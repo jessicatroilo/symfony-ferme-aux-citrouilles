@@ -12,6 +12,7 @@ module.exports = {
       'pumpkin-btn' : "#d16900",
       'leaf': "#739d7d",
       'farm-blue': "#3f646f",
+      'form-error': '#cb0c0c'
     },
     fontFamily: {
       'title': ['"Cagliostro"', 'sans-serif'],

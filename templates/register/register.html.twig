@@ -8,27 +8,80 @@
 <!-- TODO : ajouter un formulaire pour enregistrer un utilisateur - OK -->
 <!-- TODO : ajouter un formulaire pour se connecter -->
 <!-- TODO : ajouter un formulaire pour se déconnecter -->
-<!--TODO : Choisir les champs du formulaire : nom, prénom, pseudo, email, mot de passe -->
-<!--TODO : Ajouter un bouton pour valider le formulaire -->
-<!--TODO: mettre un lien pour réecrire le mot de passe deux fois -->
+<!--TODO : Choisir les champs du formulaire Création de compte : nom, prénom, pseudo, email, mot de passe OK -->
+<!--TODO : Ajouter un bouton pour valider le formulaire OK -->
+<!--TODO: mettre un lien pour réecrire le mot de passe deux fois OK-->
 
 <!--Create a registration/ Création d'un compte -->
-<div class="example-wrapper">
-    <h2 id="create-register-title" class="lg:text-5xl text-2xl text-center font-title text-pearl text-bold my-2 pt-8">Créer mon compte </h2>
-    <p class="mt-6 lg:text-xl text-md text-center leading-2 text-pearl"> Les champs marqué d"un * sont obligatoires</p>
-<div>
+<div class="bg-leaf">
+<section class="flex justify-center">
+        <div class="lg:px-32 pb-6 lg:mt-2">
+            <h2 id="create-register-title" class="lg:text-5xl text-3xl text-center font-title text-pearl  my-2 pt-8">Créer mon compte</h2>
+            <p class="lg:mt-6 lg:text-xl text-md text-center leading-2 text-pearl"> Les champs marqué d"un * sont obligatoires</p>
+        </div>
+</section>
 
-<section aria-labellebdy="create-register-title">
-    {{ form_errors(formRegisterUser) }}  
+<!--Form to register a user-->
+<section aria-labellebdy="create-register-title" class="flex align-top justify-center my-6">
+        {{ form_start (formRegisterUser) }}
+            <!-- Firstname Field -->
+            <div class="px-2 pb-2 lg:mt-2">
+                {{ form_row(formRegisterUser.firstname) }} 
+            </div>
 
-    {{ form_start (formRegisterUser, {'attr': {'aria-describedby': 'form-errors'}}) }}
-        {{ form_row(formRegisterUser.firstname) }}
-        {{ form_row(formRegisterUser.lastname) }}
-        {{ form_row(formRegisterUser.pseudo) }}
-        {{ form_row(formRegisterUser.email) }}
-        {{ form_row(formRegisterUser.password) }}
-        {{ form_row(formRegisterUser.submit) }}
-    {{ form_end(formRegisterUser) }}
+            <!-- Lastname Field -->
+            <div class="px-2 pb-2 lg:mt-2">
+                {{ form_label(formRegisterUser.lastname, 'Nom ', {'label_attr': {'class': 'font-bold text-lg text-pearl'}}) }}
+                <span aria-hidden="true" class="font-bold text-lg text-pearl">*</span><span class="sr-only">(champ obligatoire)</span>
+                {{ form_widget (formRegisterUser.lastname, {'attr': {'class' : 'text-lg text-farm-blue font-bold w-full outline-farm-blue border-2 rounded'}}) }}
+                {{ form_help (formRegisterUser.lastname) }}
+                {{ form_errors(formRegisterUser.lastname) }}
+            </div>
+
+            <!-- Pseudo Field -->
+            <div class="px-2 pb-2 lg:mt-2">
+                {{ form_label(formRegisterUser.pseudo, 'Pseudo ', {'label_attr': {'class': 'font-bold text-lg text-pearl'}}) }}
+                <span aria-hidden="true" class="font-bold text-lg text-pearl">*</span><span class="sr-only">(champ obligatoire)</span> 
+                {{ form_widget (formRegisterUser.pseudo, {'attr': {'class' : 'text-lg text-farm-blue font-bold w-full outline-farm-blue border-2 rounded'}}) }}
+                {{ form_help (formRegisterUser.pseudo) }}
+                {{ form_errors(formRegisterUser.pseudo) }}
+            </div>
+
+            <!-- Email Field -->
+            <div class="px-2 pb-2 lg:mt-2">
+                {{ form_label(formRegisterUser.email, 'Email ', {'label_attr': {'class': 'font-bold text-lg text-pearl'}}) }}
+                <span aria-hidden="true" class="font-bold text-lg text-pearl">*</span><span class="sr-only">(champ obligatoire)</span> 
+                {{ form_widget (formRegisterUser.email, {'attr': {'class' : 'text-lg text-farm-blue font-bold w-full outline-farm-blue border-2 rounded'}}) }}
+                {{ form_help (formRegisterUser.email) }}
+                {{ form_errors(formRegisterUser.email) }}
+            </div>
+
+            <!-- Password Field -->
+            <div class="px-2 pb-2 lg:mt-2">
+                {{ form_label(formRegisterUser.password.first, 'Mot de passe ', {'label_attr': {'class': 'font-bold text-lg text-pearl'}}) }}
+                <span aria-hidden="true" class="font-bold text-lg text-pearl">*</span><span class="sr-only">(champ obligatoire)</span> 
+                {{ form_widget(formRegisterUser.password.first, {'attr': {'class' : 'text-lg text-farm-blue font-bold w-full outline-farm-blue border-2 rounded'}}) }}
+                {{ form_help(formRegisterUser.password.first) }}
+                {{ form_errors(formRegisterUser.password.first) }}
+            </div>
+
+            <!-- Repeat Password Field -->
+            <div class="px-2 pb-2 lg:mt-2">
+                {{ form_label(formRegisterUser.password.second, 'Répéter le mot de passe ', {'label_attr': {'class': 'font-bold text-lg text-pearl'}}) }}
+                <span aria-hidden="true" class="font-bold text-lg text-pearl">*</span><span class="sr-only">(champ obligatoire)</span> 
+                {{ form_widget(formRegisterUser.password.second, {'attr': {'class' : 'text-lg text-farm-blue font-bold w-full outline-farm-blue border-2 rounded'}}) }}
+                {{ form_help(formRegisterUser.password.second) }}
+                {{ form_errors(formRegisterUser.password.second) }}
+            </div>
+
+            <!-- Submit Button -->
+            <div class="px-2 pb-2 lg:mt-2">
+                {{ form_row(formRegisterUser.submit) }}
+            </div>
+    
+        {{ form_end(formRegisterUser) }}
+    </div> 
 
 </section>
+</div>
 {% endblock %}

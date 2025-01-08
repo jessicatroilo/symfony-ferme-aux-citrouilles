@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
@@ -18,6 +19,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
+    #[Assert\Email (message: 'Veuillez renseigner une adresse email valide')]
+    #[Assert\NotBlank (message: 'Veuillez renseigner une adresse email')]
+    #[Assert\Length (max: 180, maxMessage: 'Votre adresse email ne peut pas dépasser {{ limit }} caractères')]
     private ?string $email = null;
 
     /**
@@ -27,18 +31,51 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private array $roles = [];
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank (message: 'Veuillez renseigner un nom')]
+    #[Assert\Length (
+        max: 100, 
+        min : 2,
+        maxMessage: 'Votre nom ne peut pas dépasser {{ limit }} caractères',
+        minMessage: 'Votre nom doit contenir au moins {{ limit }} caractères'
+        )
+    ]
+    #[Assert\Regex (pattern: '/^[a-zA-ZÀ-ÿ\-\s]+$/', message: 'Votre nom ne peut contenir que des lettres')]
     private ?string $lastname = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank (message: 'Veuillez renseigner un prénom')]
+    #[Assert\Length (
+        max: 50, 
+        min : 2,
+        maxMessage: 'Votre prénom ne peut pas dépasser {{ limit }} caractères',
+        minMessage: 'Votre prénom doit contenir au moins {{ limit }} caractères'
+        )]
+    #[Assert\Regex (pattern: '/^[a-zA-ZÀ-ÿ\-\s]+$/', message: 'Votre prénom ne peut contenir que des lettres')]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 30)]
+    #[Assert\NotBlank (message: 'Veuillez renseigner un pseudo')]
+    #[Assert\Length (max: 30, maxMessage: 'Votre pseudo ne peut pas dépasser {{ limit }} caractères')]
+    #[Assert\Regex (pattern: '/^[a-zA-Z0-9À-ÿ\-\s]+$/', message: 'Votre pseudo ne peut contenir que des lettres et des chiffres')]
     private ?string $pseudo = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $password = null;
+    #[Assert\NotBlank (message: 'Veuillez renseigner un mot de passe')]
+    #[Assert\Length (max: 12, maxMessage: 'Votre mot de passe ne peut pas dépasser {{ limit }} caractères')]
+    #[Assert\Regex (
+        pattern: '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[a-zA-Z\d\W_]{12,}$/', 
+        message: 'Votre mot de passe doit contenir au moins 12 caractères, une majuscule, une minuscule, un chiffre  et un caractère spécial'
+        )
+    ]
+    #[Assert\NotCompromisedPassword]
+    #[Assert\NotEqualTo (propertyPath: 'email', message: 'Votre mot de passe ne peut pas être identique à votre adresse email')]
+    private ?string $password = null; //TODO: Use PasswordStrengthValidator Assert 
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[Assert\Length (max: 50, maxMessage: 'Votre photo ne peut pas dépasser {{ limit }} caractères')]
+    #[Assert\Url (message: 'Veuillez renseigner une URL valide')]
+    #[Assert\Image (mimeTypes: ['image/jpeg', 'image/png'], mimeTypesMessage: 'Veuillez renseigner une image au format jpeg ou png')]
+    #[Assert\File (maxSize: '2M', maxSizeMessage: 'Votre photo ne peut pas dépasser {{ limit }}')]
     private ?string $picture = null;
 
 
@@ -47,6 +84,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updated_at = null;
+
+    /**
+     * Méthode de validation personnalisée pour vérifier si les termes réservés sont utilisés dans les champs lastname, firstname et pseudo
+     *
+     * @param ExecutionContextInterface $context
+     * @return void
+     */
+    /*#[Assert\Callback]
+    public function validateReservedWords(ExecutionContextInterface $context): void {
+    $reservedWords = ['admin', 'root', 'superadmin', 'moderator', 'administrator', 'administrateur', 'modérateur'];
+
+        // Liste des champs à valider
+        $fields = [
+            'lastname' => $this->lastname,
+            'firstname' => $this->firstname,
+            'pseudo' => $this->pseudo,
+        ];
+
+        foreach ($fields as $fieldName => $value) {
+            if (in_array(mb_strtolower($value), $reservedWords, true)) {
+                $context->buildViolation('Le terme "{{ value }}" dans le champ "{{ field }}" est réservé.')
+                    ->setParameter('{{ value }}', $value)
+                    ->setParameter('{{ field }}', $fieldName)
+                    ->atPath($fieldName) // Indique le champ concerné
+                    ->addViolation();
+            }
+        }
+    }*/
+
 
     public function getId(): ?int
     {

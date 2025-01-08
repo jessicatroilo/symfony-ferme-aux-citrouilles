@@ -12,12 +12,12 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-
+#[Route('/', name: 'app_')]
 class RegisterController extends AbstractController
 {
-    //TODO: Créer la logique pour la mise en place du formulaire de création de compte 'register'
-    //TODO: intégrer lors de la soumission et la validation le hashage du mot de passe, cf méthode userPassword
-    #[Route('/inscription', name: 'app_register')]
+    /////TODO : Créer la logique pour la mise en place du formulaire de création de compte 'register'
+    /////TODO : intégrer lors de la soumission et la validation le hashage du mot de passe, cf méthode userPassword
+    #[Route('inscription', name: 'register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, Security $security, EntityManagerInterface $entityManager): Response
     {
         //Création d'un nouvel utilisateur
@@ -55,25 +55,4 @@ class RegisterController extends AbstractController
     }
 
 
-    /**
-     * A récupérer lors de la construction du controler pour valider le formulaire
-     *
-     * @param UserPasswordHasherInterface $passwordHasher
-     * @return Response
-     */
-    /*public function userPassword(UserPasswordHasherInterface $passwordHasher): Response
-    {
-        // ... e.g. get the user data from a registration form
-        $user = new User(...);
-        $plaintextPassword = ...;
-
-        // hash the password (based on the security.yaml config for the $user class)
-        $hashedPassword = $passwordHasher->hashPassword(
-            $user,
-            $plaintextPassword
-        );
-        $user->setPassword($hashedPassword);
-
-        // ...
-    } */
 }
