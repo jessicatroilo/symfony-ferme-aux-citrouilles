@@ -45,10 +45,13 @@ class RegisterController extends AbstractController
             $entityManager->persist($user);
             //On flush
             $entityManager->flush();
-            //On redirige vers la page de connexion
-            return $this->redirectToRoute('app_home'); //TODO: à modifier quand par 'app_login' quand la page sera créée
+            // Après avoir enregistré l'utilisateur
+            $this->addFlash('success', 'Votre compte a été créé avec succès ! Vous pouvez maintenant vous connecter.');
+            // Rediriger vers la page de connexion
+            return $this->redirectToRoute('app_register'); //TODO: à modifier quand par 'app_login' quand la page sera créée
         }
 
+        
         return $this->render('register/register.html.twig', [
             'formRegisterUser' => $formRegisterUser,
         ]);

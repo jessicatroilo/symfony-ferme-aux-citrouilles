@@ -1,6 +1,6 @@
 {% block form_errors %}
     {% if errors|length > 0 %}
-        <div class="text-form-error text-sm mt-1 role="alert" aria-live="assertive">
+        <div class="text-form-error text-sm mt-1" role="alert" aria-live="assertive">
             {% for error in errors %}
                 <div>{{ error.message }}</div>
             {% endfor %}
