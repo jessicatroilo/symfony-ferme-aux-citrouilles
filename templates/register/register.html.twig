@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Créer mon compte {% endblock %}
+
+
+{% block body %}
+<!-- TODO : mettre en forme la page OK -->
+<!-- TODO : ajouter un formulaire pour enregistrer un utilisateur - OK -->
+<!-- TODO : ajouter un formulaire pour se connecter -->
+<!-- TODO : ajouter un formulaire pour se déconnecter -->
+<!--TODO : Choisir les champs du formulaire Création de compte : nom, prénom, pseudo, email, mot de passe OK -->
+<!--TODO : Ajouter un bouton pour valider le formulaire OK -->
+<!--TODO: mettre un lien pour réecrire le mot de passe deux fois OK-->
+<!-- TODO : Ajouter un message de confirmation de création de compte OK -->
+
+<!--Create a registration/ Création d'un compte -->
+<div class="bg-leaf">
+    <section class="flex justify-center">
+        <div class="lg:px-32 pb-6 lg:mt-2">
+            <h2 id="create-register-title" class="form-title-page">Créer mon compte</h2>
+            <p class="form-subtitle-page"> Les champs marqué d"un * sont obligatoires</p>
+        </div>
+    </section> 
+
+    <!--Form to register a user-->
+    <section aria-labelledby="create-register-title" class="flex align-top justify-center my-6">
+            {{ form_start (formRegisterUser) }}
+                <!-- Firstname Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formRegisterUser.firstname) }} 
+                </div>
+
+                <!-- Lastname Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formRegisterUser.lastname) }}
+                </div>
+
+                <!-- Pseudo Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formRegisterUser.pseudo) }}
+                </div>
+
+                <!-- Email Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formRegisterUser.email) }}
+                </div>
+
+                <!-- Password Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formRegisterUser.password.first) }}
+                </div>
+
+                <!-- Repeat Password Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formRegisterUser.password.second) }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formRegisterUser.submit) }}
+                </div>
+        
+            {{ form_end(formRegisterUser) }}
+        </div> 
+
+    </section>
+</div>
+{% endblock %}

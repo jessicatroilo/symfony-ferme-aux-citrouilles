@@ -1,5 +1,6 @@
 twig:
     file_name_pattern: '*.twig'
+    form_themes: ['bundles/custom_form_theme.html.twig'] #thème css/twig personnalisés pour le erreur de formulaire
 
 when@test:
     twig:
