@@ -4,23 +4,17 @@
 
 
 {% block body %}
-<!-- TODO : mettre en forme la page -->
+<!-- TODO : mettre en forme la page OK -->
 <!-- TODO : ajouter un formulaire pour enregistrer un utilisateur - OK -->
 <!-- TODO : ajouter un formulaire pour se connecter -->
 <!-- TODO : ajouter un formulaire pour se déconnecter -->
 <!--TODO : Choisir les champs du formulaire Création de compte : nom, prénom, pseudo, email, mot de passe OK -->
 <!--TODO : Ajouter un bouton pour valider le formulaire OK -->
 <!--TODO: mettre un lien pour réecrire le mot de passe deux fois OK-->
-<!-- TODO : Ajouter un message de confirmation de création de compte -->
+<!-- TODO : Ajouter un message de confirmation de création de compte OK -->
 
 <!--Create a registration/ Création d'un compte -->
 <div class="bg-leaf">
-    <div>
-        {% for message in app.flashes('success') %}
-                <div id="flash-message" class="bg-farm-blue text-pearl text-center p-4 rounded-md mb-4 shadow-lg">
-                    <span>{{ message }}</span>
-        {% endfor %} 
-    </div>
     <section class="flex justify-center">
         <div class="lg:px-32 pb-6 lg:mt-2">
             <h2 id="create-register-title" class="form-title-page">Créer mon compte</h2>

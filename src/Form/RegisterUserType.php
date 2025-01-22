@@ -22,6 +22,7 @@ class RegisterUserType extends AbstractType
         $builder
             ->add('email', EmailType::class, [
                 'label' => 'Adresse email *',
+                'required' => true,
                 'label_attr' => [
                     'class' => 'form-label',
                     'aria-label' => 'Adresse email (champ obligatoire)',
@@ -33,6 +34,7 @@ class RegisterUserType extends AbstractType
 
             ->add('lastname', TextType::class, [
                 "label" => "Nom *",
+                'required' => true,
                 'label_attr' => [
                     'class' => 'form-label', 
                     'aria-label' => 'Nom (champ obligatoire)',
@@ -44,6 +46,7 @@ class RegisterUserType extends AbstractType
 
             ->add('firstname', TextType::class, [
                 "label" => "Prénom *",  
+                'required' => true,
                 'label_attr'=> [
                     'class' => 'form-label',
                     'aria-label'=> 'Prénom (champ obligatoire)',
@@ -55,6 +58,7 @@ class RegisterUserType extends AbstractType
 
             ->add('pseudo', TextType::class, [
                 'label' => 'Pseudo *',
+                'required' => true,
                 'label_attr' => [
                     'class' => 'form-label',
                     'aria-label' => 'Pseudo (champ obligatoire)',
@@ -110,7 +114,7 @@ class RegisterUserType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
-            'csfr_token' => true,
+            'csrf_token' => true,
             
         ]);
     }

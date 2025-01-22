@@ -18,6 +18,25 @@ security:
             lazy: true
             provider: app_user_provider
 
+            # Configuration pour l'authenticator personnalisé
+            custom_authenticator: App\Security\LoginFormAuthenticator
+            
+
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                target: app_login
+
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 604800
+                path: /
+                # by default, the feature is enabled by checking a checkbox in the
+                # login form, uncomment the following line to always enable it.
+                #always_remember_me: true
+        
+    
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 

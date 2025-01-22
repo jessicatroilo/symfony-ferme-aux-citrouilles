@@ -48,7 +48,7 @@ class RegisterController extends AbstractController
             // Après avoir enregistré l'utilisateur
             $this->addFlash('success', 'Votre compte a été créé avec succès ! Vous pouvez maintenant vous connecter.');
             // Rediriger vers la page de connexion
-            return $this->redirectToRoute('app_register'); //TODO: à modifier quand par 'app_login' quand la page sera créée
+            return $this->redirectToRoute('app_login'); 
         }
 
         

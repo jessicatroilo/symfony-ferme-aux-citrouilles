@@ -34,5 +34,9 @@ body {
         @apply flex self-stretch lg:self-start justify-center mx-2 lg:mx-0 mt-4 lg:text-lg text-sm font-bold bg-pumpkin-btn text-pearl p-2 rounded-lg hover:ring-2 ring-pumpkin-btn hover:bg-farm-blue;
     }
 
+    .flash-message {
+        @apply bg-farm-blue text-pearl text-center p-4 rounded-md mb-4 shadow-lg;
+    }
+
 
 }

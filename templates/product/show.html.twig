@@ -8,13 +8,13 @@
 <!--TODO : Faire la page détail produit : OK -->
 <!--TODO : dynamiser la page avec des données de la base de données : OK -->
 <!--TODO : mettre en place le panier  -->
-<!--TODO : mettre un bouton de retour sur la page précédente -->
+<!--TODO : mettre un bouton de retour sur la page précédente : OK -->
 
 
 <!-- TITLE DESCRIPTION PAGE PRODUCT FOCUS -->
 <section class="bg-pumpkin-dark py-4">
     <div class="lg:px-32 px-6 py-12 container lg:mx-32 bg-pearl">
-        <a href="{{ path('app_front_product_list') }}" class="my-4 lg:text-lg text-m font-bold bg-leaf text-pearl p-2 rounded-lg hover:ring-2 ring-pumpkin hover:bg-farm-blue"> Retour </a>
+        <a href="{{ path('app_front_product_list') }}" class="my-4 lg:text-lg text-m font-bold bg-leaf text-pearl p-2 rounded-lg hover:ring-2 ring-pumpkin hover:bg-farm-blue" aria-label="Bouton de retour à la page produit"> Retour à la liste des produits </a>
         <h2 class="lg:text-5xl text-3xl text-center font-title text-leaf text-bold my-3">{{ product.name }}</h2>
         <div class="flex flex-col items-center lg:flex-row">
             <img  src="{{ product.picture }}" class=" w-40 h-40 lg:w-80 lg:h-80 mx-6 lg:float-left" alt="Image représentant des {{ product.name }}"> </img>
