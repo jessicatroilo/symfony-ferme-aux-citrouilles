@@ -9,7 +9,7 @@
 <!--TODO : Faire la section de liste des produits : OK --> 
 <!-- TODO : Réaliser les fiches produits : OK -->
 <!-- TODO : dynamiser la page avec des données de la base de données : OK -->
-<!--TODO : mettre en place une pagination avec Symfony : 5 produits par pages (possibilité d'en mettre plus en séléctionnant-->
+<!-- TODO : mettre en place une pagination avec Symfony : 5 produits par pages (possibilité d'en mettre plus en séléctionnant OK-->
 <!-- TODO : mettre en place un système de filtre par catégorie de produit -->
 <!-- TODO : mettre en place un système de recherche par mot clé -->
 <!-- TODO : mettre en place un système de tri par prix -->
@@ -35,7 +35,7 @@
                     
                         {{ form_start(formProductsPerPage, {'action': app.request.uri}) }}
                         <div class="text-farm-blue font-bold px-3 py-2 lg:text-2xl text-md flex flex-row items-center gap-2">
-                            {{ form_row(formProductsPerPage.productToShow) }}
+                            {{ form_row(formProductsPerPage.productToShow) }} sur {{ productList.getTotalItemCount }} produits
                             {{ form_row(formProductsPerPage.submit) }}
                         </div>
                         {{ form_end(formProductsPerPage) }} <!-- nombre de produits par page -->

@@ -22,6 +22,7 @@
         <!-- JS -->
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('flash-message') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
 
@@ -42,9 +43,15 @@
                             </a>
                         </div>
                         <div class="hidden md:flex space-x-4">
-                            <a href="{{path ('app_front_product_list')}}" class=" m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin p-2 rounded-lg"> Produits</a>                              <a href="#" class="m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a>
+                            <a href="{{path ('app_front_product_list')}}" class=" m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin p-2 rounded-lg"> Produits</a>                              
+                            <a href="#" class="m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Ateliers</a>
                             <a href="#" class="m-2 text-xl block font-text  text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">La ferme</a>
                             <a href="#" class="m-2 text-xl block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a>
+                            {% if app.user %}
+                            <a href="{{ path('app_logout') }}" class="m-2 text-lg block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Se déconnecter <i class="fa-solid fa-sign-out"></i></a>
+                            {% else %}
+                            <a href="{{ path('app_login') }}" class="m-2 text-lg block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">S'identifier <i class="fa-solid fa-user"></i></a>
+                            {% endif %}
                         </div>
                         <!-- Mobile menu button -->
                         <div class="md:hidden flex items-center">
@@ -72,6 +79,15 @@
                         <li>
                             <a href="#" class="m-2 text-lg block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg">Contact</a>
                         </li>
+                        {% if app.user %}
+                        <li>
+                            <a href="{{ path('app_logout') }}" class="m-2 text-lg block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"><i class="fa-solid fa-sign-out"></i></a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{{ path('app_login') }}" class="m-2 text-lg block font-text text-farm-blue font-bold hover:text-pumpkin  active:bg-pumpkin active:text-pearl p-2 rounded-lg"><i class="fa-solid fa-user"></i></a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
