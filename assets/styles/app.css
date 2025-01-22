@@ -2,41 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* FONTS */
-@import url(https://fonts.bunny.net/css?family=amiko:400,700); /* text */
-@import url(https://fonts.bunny.net/css?family=cagliostro:400); /* title */
-
 
 body {
-    background-color: rgb(223, 152, 94);
-    font-family: 'amiko', sans-serif;
-}
-
-@layer utilities {
-
-    .form-title-page {
-        @apply lg:text-5xl text-3xl text-center font-title text-pearl my-2 pt-8;
-    }
-
-    .form-subtitle-page {
-        @apply text-base lg:mt-6 lg:text-xl text-center leading-tight  text-pearl ;
-    }
-
-    .form-label {
-        @apply font-bold text-lg text-pearl; 
-    }
-
-    .form-input {
-        @apply text-lg text-farm-blue font-bold w-full outline-farm-blue border-pearl border-2 rounded;
-    }
-
-    .form-btn {
-        @apply flex self-stretch lg:self-start justify-center mx-2 lg:mx-0 mt-4 lg:text-lg text-sm font-bold bg-pumpkin-btn text-pearl p-2 rounded-lg hover:ring-2 ring-pumpkin-btn hover:bg-farm-blue;
-    }
-
-    .flash-message {
-        @apply bg-farm-blue text-pearl text-center p-4 rounded-md mb-4 shadow-lg;
-    }
-
-
+    background-color: skyblue;
 }

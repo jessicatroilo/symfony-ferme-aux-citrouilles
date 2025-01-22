@@ -8,11 +8,3 @@ import './bootstrap.js';
 import './styles/app.css';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('burger-menu').addEventListener('click', function () {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('hidden');
-    });
-});
