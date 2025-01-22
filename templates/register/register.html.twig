@@ -15,10 +15,12 @@
 
 <!--Create a registration/ Création d'un compte -->
 <div class="bg-leaf">
-        {# {% for message in app.flashes('success') %}
-            <div id="flash-message" class="bg-farm-blue text-pearl p-4 rounded-md mb-4 shadow-lg relative transition-all duration-300">
-                <span>{{ message }}</span>
-        {% endfor %} #} 
+    <div>
+        {% for message in app.flashes('success') %}
+                <div id="flash-message" class="bg-farm-blue text-pearl text-center p-4 rounded-md mb-4 shadow-lg">
+                    <span>{{ message }}</span>
+        {% endfor %} 
+    </div>
     <section class="flex justify-center">
         <div class="lg:px-32 pb-6 lg:mt-2">
             <h2 id="create-register-title" class="form-title-page">Créer mon compte</h2>
