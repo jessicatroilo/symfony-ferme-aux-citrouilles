@@ -29,7 +29,7 @@ class SecurityController extends AbstractController
         // dernier nom d'utilisateur saisi (si il y en a un)
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        
+
          // Si l'utilisateur est déjà connecté, on le redirige
         //if ($this->getUser()) {
            // return $this->redirectToRoute('app_home');
@@ -40,6 +40,9 @@ class SecurityController extends AbstractController
             'error'         => $error,
         ]);
     }
+
+
+    
 
     /**
      * Method to show the logout page

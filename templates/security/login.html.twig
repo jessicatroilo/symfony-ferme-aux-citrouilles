@@ -43,7 +43,7 @@
                     <div class="mx-2 mb-2">
                         <label for="inputPassword" class="form-label">Mot de passe</label>
                         <input type="password" name="password" id="inputPassword" class="form-input"
-                            autocomplete="current-password" required>
+                            autocomplete="current-password" required aria-describedby="Votre mot de passe doit contenir au moins 12 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.">
 
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                     </div>
