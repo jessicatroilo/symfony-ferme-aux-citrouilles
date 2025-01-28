@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block body %}
+<!-- Display the form to contact us -->
+<div class="bg-farm-blue">
+    <section class="flex justify-center">
+        <div class="lg:px-32 pb-6 lg:mt-2">
+            <h2 id="create-register-title" class="form-title-page">Nous contacter</h2>
+            <p class="form-subtitle-page"> Les champs marqué d"un * sont obligatoires</p>
+        </div>
+    </section> 
+
+    <!--Form to register a user-->
+    <section aria-labelledby="create-register-title" class="flex align-top justify-center my-6">
+            {{ form_start (formContact) }}
+                <!-- Firstname Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formContact.firstname) }} 
+                </div>
+
+                <!-- Lastname Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formContact.lastname) }}
+                </div>
+
+                <!-- Email Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formContact.email) }}
+                </div>
+
+                <!-- Subject Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formContact.subject) }}
+                </div>
+
+                <!-- Message Field -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formContact.message) }}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="px-2 pb-2 lg:mt-2">
+                    {{ form_row(formContact.submit) }}
+                </div>
+        
+            {{ form_end(formContact) }}
+        </div> 
+
+    </section>
+</div>
+{% endblock %}
