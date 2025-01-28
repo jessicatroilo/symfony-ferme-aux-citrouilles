@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée {% endblock %}
+
+{% block body %}
+<section>
+    <div class="">
+        <div class="">
+            <h2 class="lg:text-5xl text-2xl text-center font-title text-pearl text-bold my-2 pt-8">404</h2>
+            <h3 class="lg:text-4xl text-1xl text-center font-title text-pearl text-bold my-2 pt-8"> Page non trouvée </h3>
+        </div>
+            <img class="" src="" alt="404 page not found">
+        <div class="flex flex-col items-center mb-5">
+            <p class="mt-6 lg:text-xl text-md text-center leading-2 text-pearl">Oups ! Je crois que tu t'es perdu dans le labyrinthe de citrouilles !</p>
+            <a href="{{ path('app_home') }}" class="my-4 lg:text-lg text-m font-bold bg-leaf text-pearl p-2 rounded-lg hover:ring-2 ring-pumpkin hover:bg-farm-blue" aria-label="Bouton pour retourner à la page d'accueil"> Retour à la page d'accueil </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
