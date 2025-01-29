@@ -5,6 +5,17 @@
 {% block body %}
 <!-- Display the form to contact us -->
 <div class="bg-farm-blue">
+    <!-- Display the flash messages -->
+    <div>
+        {% for message in app.flashes('success-contact') %}
+                <div id="flash-message" class="flash-message-success">
+                    <span>{{ message }}</span>
+        {% endfor %} 
+        {% for message in app.flashes('error-contact') %}
+                <div id="flash-message" class="flash-message-error">
+                    <span>{{ message }}</span>
+        {% endfor %} 
+    </div>
     <section class="flex justify-center">
         <div class="lg:px-32 pb-6 lg:mt-2">
             <h2 id="create-register-title" class="form-title-page">Nous contacter</h2>

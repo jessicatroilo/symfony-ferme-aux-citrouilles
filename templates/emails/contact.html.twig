@@ -1,0 +1,9 @@
+        <h2>Vous avez reçu un nouveau message de {{ contact.firstname }} {{ contact.lastname }}</h2>
+        
+        <p>Email : {{ contact.email }}</p>
+        <p>Objet : {{ contact.subject }}</p>
+        <p>
+            <strong>Message :</strong> <br/>
+            {{ contact.message | nl2br }} <!-- nl2br : new line to break line if the user break line -->      
+        </p>    
+
