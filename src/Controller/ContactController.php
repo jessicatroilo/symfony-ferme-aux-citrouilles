@@ -29,12 +29,12 @@ class ContactController extends AbstractController
         // création d'une nouvelle instance de l'entité Contact
         $contact = new Contact(); 
 
-        //donnée de test // TODO à supprimer 
-        $contact->setFirstname('Jessica');
-        $contact->setLastname('Troilo');
-        $contact->setEmail('jessica.troilo@yahoo.fr');
+        //donnée de test - à supprimer ou commenter une fois utiliser
+        /* $contact->setFirstname('');
+        $contact->setLastname('');
+        $contact->setEmail('');
         $contact->setSubject('Test');
-        $contact->setMessage('Ceci est un message de test');
+        $contact->setMessage('Ceci est un message de test'); */
 
         // Création du formulaire
         $form = $this->createForm(ContactType::class, $contact); 
@@ -71,6 +71,8 @@ class ContactController extends AbstractController
 
                 // Redirection vers la page de contact
                 return $this->redirectToRoute('app_front_contact');
+
+               
             } catch (\Exception $e) {
                 $this->addFlash('error-contact', 'Une erreur est survenue lors de l\'envoi du message');
             }  
